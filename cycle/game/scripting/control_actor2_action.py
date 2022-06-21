@@ -20,7 +20,7 @@ class ControlActor2Action(ControlActor1Action):
         Args:
             keyboard_service (KeyboardService): An instance of KeyboardService.
         """
-        super().__init__()
+        super().__init__(keyboard_service)
         self._keyboard_service = keyboard_service
         self._direction = Point(constants.CELL_SIZE, 0)
 
