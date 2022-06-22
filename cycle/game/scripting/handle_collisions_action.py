@@ -56,15 +56,19 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        snake1 = cast.get_first_actor("snakes1")
-        head = snake1.get_segments()[0]
-        segments = snake1.get_segments()[1:]
-        snake2 = cast.get_first_actor("snakes2")
-        head = snake2.get_segments()[0]
-        segments = snake2.get_segments()[1:]
+        cycle1 = cast.get_first_actor("snakes1")
+        head1 = cycle1.get_segments()[0]
+        segments1 = cycle1.get_segments()[1:]
+
+        cycle2 = cast.get_first_actor("snakes2")
+        head2 = cycle2.get_segments()[0]
+        segments2 = cycle2.get_segments()[1:]        
         
-        for segment in segments:
-            if head.get_position().equals(segment.get_position()):
+        for segment in segments2:
+            if head1.get_position().equals(segment.get_position()):
+                self._is_game_over = True    
+        for segment in segments1:
+            if head2.get_position().equals(segment.get_position()):
                 self._is_game_over = True
         
     def _handle_game_over(self, cast):
@@ -74,11 +78,10 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
         """
         if self._is_game_over:
-            snake1 = cast.get_first_actor("snakes1")
-            segments = snake1.get_segments()
-            snake2 = cast.get_first_actor("snakes2")
-            segments = snake2.get_segments()
-            food = cast.get_first_actor("foods")
+            cycle1 = cast.get_first_actor("snakes1")
+            segments1 = cycle1.get_segments()
+            cycle2 = cast.get_first_actor("snakes2")
+            segments2 = cycle2.get_segments()
 
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
@@ -89,6 +92,7 @@ class HandleCollisionsAction(Action):
             message.set_position(position)
             cast.add_actor("messages", message)
 
-            for segment in segments:
+            for segment in segments1:
                 segment.set_color(constants.WHITE)
-            food.set_color(constants.WHITE)
+            for segment in segments2:
+                segment.set_color(constants.WHITE)

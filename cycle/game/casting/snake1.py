@@ -52,8 +52,8 @@ class Snake1(Actor):
         self._segments[0].set_velocity(velocity)
     
     def _prepare_body(self):
-        x = int(constants.MAX_X / 2)
-        y = int(constants.MAX_Y / 2)
+        x = int((constants.MAX_X*2) / 3)
+        y = int(constants.MAX_Y / 3)
 
         for i in range(constants.SNAKE_LENGTH):
             position = Point(x - i * constants.CELL_SIZE, y)

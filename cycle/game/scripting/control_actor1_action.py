@@ -46,6 +46,6 @@ class ControlActor1Action(Action):
             self._direction = Point(0, constants.CELL_SIZE)
         
         snake1 = cast.get_first_actor("snakes1")
-        snake2 = cast.get_first_actor("snakes2")
+        #snake2 = cast.get_first_actor("snakes2")
         snake1.turn_head(self._direction)
-        snake2.turn_head(self._direction)
+        #snake2.turn_head(self._direction)
