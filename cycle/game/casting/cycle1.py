@@ -3,14 +3,12 @@ from game.casting.actor import Actor
 from game.shared.point import Point
 
 
-class Snake2(Actor):
+class Cycle1(Actor):
     """
     A long limbless reptile.
     
-    The responsibility of Snake is to move itself.
+    The responsibility of Cycle is to move itself.
 
-    Attributes:
-        _points (int): The number of points the food is worth.
     """
     def __init__(self):
         super().__init__()
@@ -44,22 +42,22 @@ class Snake2(Actor):
             segment = Actor()
             segment.set_position(position)
             segment.set_velocity(velocity)
-            segment.set_text("%")
-            segment.set_color(constants.RED)
+            segment.set_text("#")
+            segment.set_color(constants.GREEN)
             self._segments.append(segment)
 
     def turn_head(self, velocity):
         self._segments[0].set_velocity(velocity)
     
     def _prepare_body(self):
-        x = int(constants.MAX_X / 2)
-        y = int(constants.MAX_Y *2/ 3)
+        x = int((constants.MAX_X) / 2)
+        y = int(constants.MAX_Y / 3)
 
-        for i in range(constants.SNAKE_LENGTH):
+        for i in range(constants.CYCLE_LENGTH):
             position = Point(x - i * constants.CELL_SIZE, y)
             velocity = Point(1 * constants.CELL_SIZE, 0)
-            text = "8" if i == 0 else "%"
-            color = constants.WHITE if i == 0 else constants.RED
+            text = "8" if i == 0 else "#"
+            color = constants.YELLOW if i == 0 else constants.GREEN
             
             segment = Actor()
             segment.set_position(position)
