@@ -1,9 +1,10 @@
 import constants
+from game.casting.snake1 import Snake1
 from game.casting.actor import Actor
 from game.shared.point import Point
 
 
-class Snake2(Actor):
+class Snake2(Snake1):
     """
     A long limbless reptile.
     
