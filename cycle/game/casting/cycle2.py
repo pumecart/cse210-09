@@ -1,4 +1,5 @@
 import constants
+from game.casting.cycle1 import Cycle1
 from game.casting.actor import Actor
 from game.shared.point import Point
 
