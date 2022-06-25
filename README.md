@@ -1,5 +1,15 @@
 # CYCLE
-Cycle is a game where the players try to cut eacch other off using cycles that leave a trail behind them.
+Cycle is a game where the players try to cut each other off using cycles that leave a trail behind them.
+
+## GAMEPLAY
+With every move made by a player, it's cycle size will grow considerably.
++ Controls
+  - Players can move up, down, left and right.
+  - Player one moves using the W, S, A and D keys.
+  - Player two moves using the I, K, J and L keys.
++ Game Over
+  - If a player collides with their opponent's trail loses.
+  - A score of 1 will appear in the top corner's screen to the player who wins.
 
 ## Getting Started
 ---
