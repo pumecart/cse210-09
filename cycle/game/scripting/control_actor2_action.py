@@ -35,22 +35,22 @@ class ControlActor2Action(ControlActor1Action):
         # left
         if self._keyboard_service.is_key_down('j'):
             self._direction = Point(-constants.CELL_SIZE, 0)
-            cycle2.grow_tail(1)
+            cycle2.grow_tail(2)
         
         # right
         if self._keyboard_service.is_key_down('l'):
             self._direction = Point(constants.CELL_SIZE, 0)
-            cycle2.grow_tail(1)
+            cycle2.grow_tail(2)
         
         # up
         if self._keyboard_service.is_key_down('i'):
             self._direction = Point(0, -constants.CELL_SIZE)
-            cycle2.grow_tail(1)
+            cycle2.grow_tail(2)
         
         # down
         if self._keyboard_service.is_key_down('k'):
             self._direction = Point(0, constants.CELL_SIZE)
-            cycle2.grow_tail(1)
+            cycle2.grow_tail(2)
         
 
         cycle2.turn_head(self._direction)
