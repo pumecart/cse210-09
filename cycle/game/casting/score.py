@@ -1,3 +1,4 @@
+import constants
 from game.casting.actor import Actor
 
 
@@ -14,6 +15,7 @@ class Score(Actor):
     """
     def __init__(self):
         super().__init__()
+        self.set_color(constants.GREEN)
         self._points = 0
         self.add_points(0)
 

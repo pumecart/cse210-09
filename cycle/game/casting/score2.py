@@ -1,6 +1,7 @@
 from game.casting.actor import Actor
 from game.casting.score import Score
 from game.shared.point import Point
+import constants
 
 
 class Score2(Score):
@@ -16,6 +17,7 @@ class Score2(Score):
     """
     def __init__(self):
         super().__init__()
+        self.set_color(constants.RED)
         self._points = 0
         self.add_points(0)
-        self._position = Point(825, 0)
+        self.set_position(Point(825, 0))
